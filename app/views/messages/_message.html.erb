@@ -1,16 +1,16 @@
 <div class="event">
-    <div class="label">
-        <img src="https://semantic-ui.com/images/avatar/small/elliot.jpg">
+  <div class="label">
+    <i class="orange edit icon"></i>
+  </div>
+  <div class="content">
+    <div class="summary">
+      <strong><%= message.user.username %></strong> said
+      <div class="date">
+        <%= time_ago_in_words(message.created_at) %> ago
+      </div>
     </div>
-    <div class="content">
-        <div class="summary">
-            <a><%= message.user.username %></a> posted a message
-            <div class="date">
-                <%= time_ago_in_words(message.created_at) %> ago
-            </div>
-        </div>
-        <div class="extra text">
-            <%= message.body %>
-        </div>
+    <div class="extra text">
+      <%= message.body %>
     </div>
+  </div>
 </div>
