@@ -17,3 +17,10 @@
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+    // Close message on close icon click
+    $('.message .close').on('click', function() {
+        $(this).closest('.message').transition('fade');
+    });
+});
