@@ -62,4 +62,9 @@ Rails.application.configure do
   #Allow Action Cable to connect from localhost (browser)
   config.action_cable.url = "ws://localhost:3000/cable"
   config.action_cable.allowed_request_origins = [/http:\/\/localhost:\d+/]
+
+  # Suppress Ruby warnings in development
+  Warning[:deprecated] = false if defined?(Warning)
+  Warning[:experimental] = false if defined?(Warning)
+
 end

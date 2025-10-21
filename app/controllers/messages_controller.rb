@@ -6,9 +6,7 @@ class MessagesController < ApplicationController
         if message.save
             flash[:success] = "Message sent"
             ActionCable.server.broadcast 'chatroom_channel', mod_message: message_render(message)
-        else
-            flash[:danger] = "Message cannot be blank"
-            redirect_to root_path
+        
         end
     end
 
